@@ -46,7 +46,7 @@ export default function PricingSection() {
                   보너스 디지털 자료
                 </li>
               </ul>
-              <PurchaseButton />
+              <PurchaseButton productType="전자책" price={19900} />
             </div>
           </AnimatedSection>
 
@@ -90,7 +90,7 @@ export default function PricingSection() {
                   저자 사인본 (한정)
                 </li>
               </ul>
-              <PurchaseButton />
+              <PurchaseButton productType="종이책+전자책" price={29900} />
             </div>
           </AnimatedSection>
         </div>

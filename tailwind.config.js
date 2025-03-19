@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#3B82F6', // 파란색 계열, 원하는 색상으로 변경 가능
+        primary: '#3B82F6', // 또는 원하는 색상
         secondary: '#1D4ED8',
         accent: '#DBEAFE',
         dark: '#1F2937',

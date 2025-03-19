@@ -3,6 +3,7 @@
 import { useEffect } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { v4 as uuidv4 } from 'uuid'
 import HeroSection from './sections/HeroSection'
 import PreviewSection from './sections/PreviewSection'
 import AuthorSection from './sections/AuthorSection'
@@ -38,6 +39,26 @@ export default function Home() {
         }
       )
     })
+    
+    // 페이지 방문 추적
+    const trackPageVisit = () => {
+      // 세션 ID 생성 또는 가져오기
+      let sessionId = localStorage.getItem('session_id')
+      if (!sessionId) {
+        sessionId = uuidv4()
+        localStorage.setItem('session_id', sessionId)
+      }
+      
+      // 여기서 방문 정보를 다른 방식으로 처리하거나 콘솔에 기록할 수 있습니다
+      console.log('페이지 방문:', {
+        session_id: sessionId,
+        page: 'landing',
+        referrer: document.referrer || 'direct',
+        user_agent: navigator.userAgent
+      })
+    }
+    
+    trackPageVisit()
     
     return () => {
       // 컴포넌트 언마운트 시 ScrollTrigger 정리
